@@ -19,7 +19,31 @@ namespace PrintPrimes
 
     private static void PrintPrimes(int number)
     {
-      throw new NotImplementedException();
+      //Console.WriteLine("ola");
+
+      int num, i, contador;
+      contador =0;
+
+      num = int.Parse(Console.ReadLine());
+
+      for (i=1; i<=num; i++ ){
+
+        if (num % i ==0){
+
+          contador= contador + 1;
+
+        }
+        if (contador > 2){
+          
+          Console.WriteLine("{0} No es primo", num);
+        }
+        else{
+           Console.WriteLine("{0} Es primo", num);
+        }
+        Console.ReadLine();
     }
+
+
   }
+}
 }

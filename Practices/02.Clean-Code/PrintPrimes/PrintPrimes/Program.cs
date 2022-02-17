@@ -14,12 +14,37 @@ namespace PrintPrimes
       // Error: Invalid Number
       PrintPrimes(1);
       // Error: 1 Is not Prime
-
+      // Erorrrrr
     }
 
     private static void PrintPrimes(int number)
-    {
-      throw new NotImplementedException();
+    {   
+      /*   if(number > 0 && number < 1 ){
+          Console.Write("Numero invalido");
+        }
+        else if(number%2 == 0 ){
+          Console.Write("No es primo");
+        } */
+        
+        for(int i = 0 ; i <= number ; i++){
+            if(number >= 0 && number <= 1 ){
+              Console.Write("Numero invalido");
+                
+            }else{
+              
+              if(i % 2 != 0 ){
+              //Console.Write("No es primo");
+              Console.Write(i + "   ");
+            
+            }
+      
+            }
+
+             
+          
+        }
+
+       
     }
   }
 }

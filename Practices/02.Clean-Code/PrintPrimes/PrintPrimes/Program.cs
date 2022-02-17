@@ -19,7 +19,7 @@ namespace PrintPrimes
 
     private static void PrintPrimes(int number)
     {
-      throw new NotImplementedException();
+      Console.WriteLine("Real World");
     }
   }
 }

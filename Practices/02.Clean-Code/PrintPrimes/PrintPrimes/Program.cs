@@ -13,13 +13,36 @@ namespace PrintPrimes
       PrintPrimes(0);
       // Error: Invalid Number
       PrintPrimes(1);
-      // Error: 1 Is not Prime
+            
 
-    }
+        }
 
     private static void PrintPrimes(int number)
     {
-      throw new NotImplementedException();
-    }
+            //throw new NotImplementedException();
+            int n = 2;
+            int total = 1;
+            while (total <= 14)
+            {
+                bool esPrimo = true;
+                for (int i = 2; i < n; i++)
+                {
+                    if (n % i == 0)
+                    {
+                        esPrimo = false;
+                        break;
+                    }
+
+                }
+
+                if (esPrimo)
+                {
+                    Console.WriteLine(n);
+                    total++;
+                }
+                //se incrementa para evaluar el siguiente número
+                n++;
+            }
+        }
   }
 }

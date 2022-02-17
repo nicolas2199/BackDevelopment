@@ -19,7 +19,28 @@ namespace PrintPrimes
 
     private static void PrintPrimes(int number)
     {
-      throw new NotImplementedException();
+      /* Console.WriteLine("Hello sFeZ"); */
+
+      int contador = 0; 
+      for (int i = 2; i <= 13; i++){ 
+
+        for (int j = 1; j <= i; j++){   
+ 
+          if (i % j == 0){ 
+            contador = contador + 1;
+          }
+
+        }
+    
+        if (contador <= 2){ 
+          Console.WriteLine(i);
+        }      
+        contador = 0; 
+    
+    
+      }
+  
+      Console.ReadKey();
     }
   }
 }

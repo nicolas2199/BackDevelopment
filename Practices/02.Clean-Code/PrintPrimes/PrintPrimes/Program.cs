@@ -19,7 +19,14 @@ namespace PrintPrimes
 
     private static void PrintPrimes(int number)
     {
-      throw new NotImplementedException();
+      Console.WriteLine("Real World");
+      //Loop to iterate until the number
+        //validate is the index is Prime
+          //Loop from 2 number
+            //validate if multipleOf
+              //return True =>> Not Prime
+            //If is Prime
+              //Write Number
     }
   }
 }

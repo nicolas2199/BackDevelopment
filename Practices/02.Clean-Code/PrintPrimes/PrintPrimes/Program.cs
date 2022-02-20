@@ -19,6 +19,53 @@ namespace PrintPrimes
 
     private static void PrintPrimes(int number)
     {
+      try
+      {
+        Console.WriteLine(getPrimesFrom(number));
+      }
+      catch (ArgumentException e)
+      {
+        Console.WriteLine(e.Message);
+      }
+    }
+
+    private static string getPrimesFrom(int number){
+      string primesCatch = "";
+      const int DividersOfPrime = 2;
+
+      if (number == 1)
+      {
+        throw new ArgumentException("Error: 1 Is not Prime");
+      }
+      if (number <= 0)
+      {
+        throw new ArgumentException("Error: Invalid Number");
+      }
+      for (int currenNumber = 1; currenNumber <= number; currenNumber++)
+      {
+        int contDivisor = 0;
+        for (int i = 1; i <= currenNumber; i++)
+        {
+          if(currenNumber % i == 0)
+          {
+            contDivisor += 1;
+          }
+          if(contDivisor > DividersOfPrime)
+          {
+            break;
+          }
+        }
+        if(contDivisor == DividersOfPrime)
+        {
+          primesCatch += currenNumber.ToString()+",";
+        }
+      }
+      return primesCatch;
+    }
+
+    //*******old code, the firts one code version.*******
+    /* private static void PrintPrimes(int number)
+    {
       if(number == 1)
       {
         Console.Write("Error: 1 Is not Prime\n");
@@ -62,7 +109,8 @@ namespace PrintPrimes
       }
 
       return false;
-    }
+    } */
+    //******* END old code, the firts one code version.*******
     
   }
 }

@@ -23,7 +23,7 @@ namespace PrintPrimes
       {
         Console.WriteLine(getPrimesFrom(number));
       }
-      catch (ArgumentException e)
+      catch (NotSupportedException e)
       {
         Console.WriteLine(e.Message);
       }
@@ -35,11 +35,11 @@ namespace PrintPrimes
 
       if (number == 1)
       {
-        throw new ArgumentException("Error: 1 Is not Prime");
+        throw new NotSupportedException("Error: 1 Is not Prime");
       }
       if (number <= 0)
       {
-        throw new ArgumentException("Error: Invalid Number");
+        throw new NotSupportedException("Error: Invalid Number");
       }
       for (int currentNumber = 1; currentNumber <= number; currentNumber++)
       {

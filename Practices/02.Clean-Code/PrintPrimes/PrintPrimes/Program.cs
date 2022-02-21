@@ -41,12 +41,12 @@ namespace PrintPrimes
       {
         throw new ArgumentException("Error: Invalid Number");
       }
-      for (int currenNumber = 1; currenNumber <= number; currenNumber++)
+      for (int currentNumber = 1; currentNumber <= number; currentNumber++)
       {
         int contDivisor = 0;
-        for (int i = 1; i <= currenNumber; i++)
+        for (int i = 1; i <= currentNumber; i++)
         {
-          if(currenNumber % i == 0)
+          if(currentNumber % i == 0)
           {
             contDivisor += 1;
           }
@@ -57,7 +57,7 @@ namespace PrintPrimes
         }
         if(contDivisor == DividersOfPrime)
         {
-          primesCatch += currenNumber.ToString()+",";
+          primesCatch += currentNumber.ToString()+",";
         }
       }
       return primesCatch;

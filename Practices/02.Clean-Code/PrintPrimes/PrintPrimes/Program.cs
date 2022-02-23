@@ -17,9 +17,32 @@ namespace PrintPrimes
 
     }
 
+
     private static void PrintPrimes(int number)
     {
-      throw new NotImplementedException();
+      if (number == 0)
+    {
+        Console.WriteLine("Error: Invalid Number.");
+    }
+    else if (number == 1)
+    {
+        Console.WriteLine("Error: 1 Is not Prime.");
+    }
+      else{
+        int numberCounter = 0;
+        for (int i = 2; i <= number; i++){  
+          for (int j = 1; j <= i; j++){
+             if (i % j == 0){ 
+                numberCounter = numberCounter + 1;
+               }
+            }
+         if (numberCounter <= 2){ 
+           Console.WriteLine(i + ", ");
+          }
+         numberCounter = 0;
+         }
+         Console.WriteLine();
+      }
     }
   }
 }

@@ -17,16 +17,40 @@ namespace PrintPrimes
 
     }
 
-    private static void PrintPrimes(int number)
-    {
-      Console.WriteLine("hola");
-      //loop to iterate until the number
+     //loop to iterate until the number
         //Validate is the index is prime
           //loop from 2 to number
             // validate if multipleof
               //return True => not prime
             // is IsPrime
               //Write number
+
+    private static void PrintPrimes(int number)
+    {
+      for (int i = 1; i <= number; i++){
+        int contPrimes = 0;
+          for (int j = 1; j <= i; j++)
+          {
+            if (i % j == 0)
+            {
+              contPrimes++;
+            }
+          }
+        if (contPrimes == 2)
+        {
+          Console.Write(i);
+          Console.Write(", ");
+        }
+      }
+      Console.WriteLine();
+        if (number == 0)
+        {
+          Console.Write("Error: Invalid Number");
+        }
+        if (number == 1)
+        {
+          Console.Write("1 Is not Prime");
+        }
     }
   }
 }

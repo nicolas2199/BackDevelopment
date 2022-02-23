@@ -19,28 +19,42 @@ namespace PrintPrimes
 
     private static void PrintPrimes(int number)
     {
-      /* Console.WriteLine("Hello sFeZ"); */
+      
+      if (number==0){
+        Console.WriteLine ("-------------------------------------------");
+        Console.WriteLine ("| ERROR: The numer "+"0"+" its a invalid number |");
+        Console.WriteLine ("-------------------------------------------");
+      }
 
-      int contador = 0; 
-      for (int i = 2; i <= 13; i++){ 
+      else if (number==1){
+        Console.WriteLine ("| ERROR: The number "+"1"+" is not prime |");
+        Console.WriteLine ("------------------------------------");
+      }
 
-        for (int j = 1; j <= i; j++){   
- 
-          if (i % j == 0){ 
-            contador = contador + 1;
+      else{
+        Console.WriteLine("----------------------------");
+        int cont = 0;
+        for (int i = 2; i <= number; i++){  
+          for (int j = 1; j <= i; j++){
+            if (i % j == 0){ 
+              cont = cont + 1;
+            }
           }
 
+          if (cont <= 2){ 
+              Console.WriteLine("|            "+i+"             |");
+          }
+
+          cont = 0;
+    
         }
-    
-        if (contador <= 2){ 
-          Console.WriteLine(i);
-        }      
-        contador = 0; 
-    
-    
+
       }
   
       Console.ReadKey();
+
     }
+
   }
+
 }

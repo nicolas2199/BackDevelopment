@@ -20,29 +20,43 @@ namespace PrintPrimes
     private static void PrintPrimes(int number)
     {
             //throw new NotImplementedException();
-            int n = 2;
-            int total = 1;
-            while (total <= 14)
+            bool isPrime = true;
+            try
             {
-                bool esPrimo = true;
-                for (int i = 2; i < n; i++)
+                
+                for (int i = 1; i <= number; i++)
                 {
-                    if (n % i == 0)
+                    for (int j = 2; j <= number; j++)
                     {
-                        esPrimo = false;
-                        break;
+                        if (i != j && i % j == 0 || i == 1)
+                        {
+                            isPrime = false;
+                            break;
+                        }
                     }
-
+                   
+                        if (isPrime)
+                        {
+                        if(number == 1)
+                        {
+                            Console.WriteLine("Error: Invalid Number");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Prime:" + i);
+                        }
+                            
+                        }
+                    
+                   
+                    isPrime = true;
                 }
-
-                if (esPrimo)
-                {
-                    Console.WriteLine(n);
-                    total++;
-                }
-                //se incrementa para evaluar el siguiente número
-                n++;
             }
+            catch(Exception e)
+            {
+                
+            }
+            
         }
   }
 }

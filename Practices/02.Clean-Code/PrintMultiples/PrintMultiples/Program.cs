@@ -26,7 +26,7 @@ namespace PrintMultiples
 
                 if(isMultiple == true)
                 {
-                    Console.WriteLine("M-355963");
+                    Console.WriteLine("M-3");
                     isMultiple = true;
                 } else {
                     Console.WriteLine(i);

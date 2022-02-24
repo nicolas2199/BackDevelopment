@@ -14,22 +14,23 @@ namespace PrintPrimes
       Console.WriteLine ("Primos hasta 10");
       PrintPrimes(10);
       // 2,3,5,7
-      
+
+      Console.WriteLine ("Primos hasta 0");
+      PrintPrimes(0);
+      // Error: Invalid Number
+
       Console.WriteLine ("Primos hasta 1");
       PrintPrimes(1);
       // Error: 1 Is not Prime
       
-      Console.WriteLine ("Primos hasta 0");
-      PrintPrimes(0);
-      
-      // Error: Invalid Number
+     
     }
     private static void PrintPrimes(int number){
       if (number==0){
-        Console.WriteLine ("Invalid Number");
+        Console.WriteLine ("Número invalido");
       }
       else if (number==1){
-        Console.WriteLine ("1 Is not Prime");
+        Console.WriteLine ("1 no es primo");
       }
       else{
         int cont = 0;
@@ -48,4 +49,4 @@ namespace PrintPrimes
       }
     }
   }
-}
+}   

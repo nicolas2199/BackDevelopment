@@ -19,6 +19,54 @@ namespace PrintPrimes
 
     private static void PrintPrimes(int number)
     {
+      
+      Console.WriteLine(getPrimesFrom(number));
+      
+    }
+
+    private static string getPrimesFrom(int number){
+      string primesCatch = "";
+
+      if (number == 1)
+      {
+        return ("Error: 1 Is not Prime");
+      }
+      if (number <= 0)
+      {
+        return ("Error: Invalid Number");
+      }
+
+      for (int currentNumber = 1; currentNumber <= number; currentNumber++)
+      {
+        if(validatePrime(currentNumber))
+        {
+          primesCatch += currentNumber.ToString()+",";
+        }
+      }
+      return primesCatch;
+    }
+
+    private static bool validatePrime(int currentNumber){
+        
+        for (int i = 2; i < currentNumber; i++)
+        {
+          if(IsDivider(currentNumber,i))
+          {
+            return false;
+          }
+        }
+
+      return true;
+    }
+
+    private static bool IsDivider(int number, int divider){
+
+      return number % divider == 0;
+    }
+
+    //************* old code version *************
+    /* private static void PrintPrimes(int number)
+    {
       try
       {
         Console.WriteLine(getPrimesFrom(number));
@@ -61,56 +109,8 @@ namespace PrintPrimes
         }
       }
       return primesCatch;
-    }
-
-    //*******old code, the firts one code version.*******
-    /* private static void PrintPrimes(int number)
-    {
-      if(number == 1)
-      {
-        Console.Write("Error: 1 Is not Prime\n");
-        return;
-      }else if(number <= 0)
-      {
-        Console.Write("Error: Invalid Number\n");
-        return;
-      }
-
-      for (int i = 1; i <= number; i++)
-      {
-        if(IsPrime(i))
-        {
-          Console.Write(i.ToString()+", ");
-        }
-      }
-      Console.Write("\n");
-
-      //throw new NotImplementedException();
-    }
-
-    private static bool IsPrime(int number){
-      int contDivider = 0;
-
-      for (int i = 1; i <= number; i++)
-      {
-        if (number % i == 0)
-        {
-          contDivider += 1;
-        }
-        if (contDivider>2)
-        {
-          return false;
-        }
-      }
-
-      if (contDivider == 2)
-      {
-        return true;
-      }
-
-      return false;
     } */
-    //******* END old code, the firts one code version.*******
+
     
   }
 }

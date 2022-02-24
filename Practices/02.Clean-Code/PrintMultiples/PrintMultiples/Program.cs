@@ -1,12 +1,27 @@
 ﻿using System;
 
-namespace PrintMultiples
+namespace PrinMultiples
 {
-    public class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Del 1 al 100");
+            for (int i=1;i<=100;i++){
+               
+                if(i%15==0){
+                    Console.WriteLine("Numero: "+i+" M-3-5");
+                }
+                else if(i%5==0){
+                     Console.WriteLine("Numero: "+i+" M-5");
+                }
+                else if(x%3==0){
+                    Console.WriteLine("Numero: "+i+" M-3");
+                }
+                else{
+                     Console.WriteLine("Numero: "+i);
+                }
+            }
         }
     }
 }

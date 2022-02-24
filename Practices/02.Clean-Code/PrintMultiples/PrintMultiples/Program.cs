@@ -2,16 +2,36 @@
 
 namespace PrintMultiples
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            PrintMultiples();
+
+            
         }
 
-        private static void PrintMultiples(int number){
-            for(int i = 0; i < 100; i++){
-                Console.WriteLine(i);
+        private static void PrintMultiples()
+        {
+            bool isMultiple;
+
+            for(int i = 1; i <= 100; i++)
+            {
+                isMultiple = false;
+
+                if(i%3 == 0)
+                {
+                    isMultiple = true;
+                }
+
+                if(isMultiple == true)
+                {
+                    Console.WriteLine("M-355963");
+                    isMultiple = true;
+                } else {
+                    Console.WriteLine(i);
+                    isMultiple = false;
+                }
             }
         }
     }

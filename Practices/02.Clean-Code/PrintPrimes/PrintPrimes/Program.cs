@@ -19,7 +19,13 @@ namespace PrintPrimes
 
     private static void PrintPrimes(int number)
     {
-      throw new NotImplementedException();
+     int contador= 0;
+     int numeroInicial=1;
+
+     while(numeroInicial <= 13){
+       for (int i =1; i<= number);
+     }
+     
     }
   }
 }

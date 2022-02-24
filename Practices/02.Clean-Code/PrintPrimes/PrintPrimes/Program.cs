@@ -23,8 +23,17 @@ namespace PrintPrimes
             bool isPrime = true;
             try
             {
-                
-                for (int i = 1; i <= number; i++)
+                if (number == 1)
+                {
+                    Console.WriteLine("Error: Invalid Number");
+                }
+
+                if (number == 0)
+                {
+                    Console.WriteLine("Error: Invalid Number");
+                }
+
+                for (int i = 2; i <= number; i++)
                 {
                     for (int j = 2; j <= number; j++)
                     {
@@ -37,14 +46,9 @@ namespace PrintPrimes
                    
                         if (isPrime)
                         {
-                        if(number == 1)
-                        {
-                            Console.WriteLine("Error: Invalid Number");
-                        }
-                        else
-                        {
+                        
                             Console.WriteLine("Prime:" + i);
-                        }
+                        
                             
                         }
                     

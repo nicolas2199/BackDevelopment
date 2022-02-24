@@ -19,7 +19,32 @@ namespace PrintPrimes
 
     private static void PrintPrimes(int number)
     {
-      throw new NotImplementedException();
-    }
+      if (number <= 0)
+      {
+        Console.WriteLine("Invalid Number");
+      }
+      if (number == 1)
+      {
+        Console.WriteLine("1 Is not Prime");
+      }
+      for(int i=2 ; i<=number ; i++)
+            {
+              int primeflag = 0;
+                 for(int j=2;j<i;j++)
+                  {
+                     if(i%j==0)
+                       {
+                        primeflag = 1;
+                        break;
+                       }
+                  }
+                    if(primeflag==0)
+                    {
+                        Console.WriteLine(i);
+                    }
+            }
+            Console.WriteLine( Environment.NewLine);
+
+  }
   }
 }

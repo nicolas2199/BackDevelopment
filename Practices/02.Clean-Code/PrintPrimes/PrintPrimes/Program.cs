@@ -40,7 +40,7 @@ namespace PrintPrimes
                   }
                     if(primeflag==0)
                     {
-                        Console.WriteLine(i);
+                        Console.Write(i+" ");
                     }
             }
             Console.WriteLine( Environment.NewLine);

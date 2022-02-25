@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 
 namespace PrintMultiples
@@ -6,33 +7,51 @@ namespace PrintMultiples
 
  internal class Program
   {
-      private const int 
+   
 static void Main(string[] args)
     {
-    PrintFirstHundred();
+    PrintMultiples(100);
     }
 
 
-    private static void PrintFirstHundred(){
-        for (int currentNumber = 1; currentNumber <= 15; currentNumber++)
+    private static void PrintMultiples(int maxvalue){
+
+        Console.WriteLine(GetMultiples(maxvalue));
+        
+    }
+
+    private static bool CheckIfItsMultiple(int currentNumber, int baseNumber){
+
+        return currentNumber%baseNumber == 0;
+    }
+
+    private static string GetMultiples(int maxvalue){
+        StringBuilder listMultiples = new StringBuilder();
+
+        for (int currentNumber = 1; currentNumber <= maxvalue; currentNumber++)
         {
-            Console.WriteLine (CheckIfItsMultiple(currentNumber, 3));
-           /* if(currentNumber%5 == 0){
-            Console.WriteLine("M-5");
+            if (CheckIfItsMultiple(currentNumber, 3) && CheckIfItsMultiple(currentNumber, 5))
+            {
+            listMultiples.Append("M-3-5"); 
+            }
+            else if(CheckIfItsMultiple(currentNumber, 5)){
+            listMultiples.Append("M-5"); 
+            }
+            else if (CheckIfItsMultiple(currentNumber, 3))
+            {
+            listMultiples.Append("M-3"); 
             }
             else
             {
-            Console.WriteLine(currentNumber);
-            }*/
+            listMultiples.Append(currentNumber); 
+            }
+            if (currentNumber<maxvalue){
+                listMultiples.Append(", ");
+            }
         }
+        return listMultiples.ToString();
+
     }
-
-    private static bool CheckIfItsMultiple(int currentNumber, int comparativeNumber){
-
-        return(currentNumber%comparativeNumber == 0);
-    }
-
-
     
 }
 }

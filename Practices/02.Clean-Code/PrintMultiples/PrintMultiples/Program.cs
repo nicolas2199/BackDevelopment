@@ -6,20 +6,20 @@ namespace PrinMultiples
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Del 1 al 100");
-            for (int i=1;i<=100;i++){
+            Console.WriteLine("Numbers from 1 to 100");
+            for (int number=1;number<=100;number++){
                
-                if(i%15==0){
-                    Console.WriteLine("Numero: "+i+" M-3-5");
+                if(number%3==0){
+                    Console.WriteLine(number+" M-3 ");
                 }
-                else if(i%5==0){
-                     Console.WriteLine("Numero: "+i+" M-5");
+                else if(number%5==0){
+                     Console.WriteLine(number+" M-5 ");
                 }
-                else if(x%3==0){
-                    Console.WriteLine("Numero: "+i+" M-3");
+                else if(number%15==0){
+                    Console.WriteLine(number+" M-3-5 ");
                 }
                 else{
-                     Console.WriteLine("Numero: "+i);
+                     Console.WriteLine(number);
                 }
             }
         }

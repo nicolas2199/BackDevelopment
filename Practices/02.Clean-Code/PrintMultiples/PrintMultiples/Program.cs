@@ -16,7 +16,6 @@ namespace PrintMultiples
              try
             {
              checkMultiples(numberCounter);
-             
             }
             catch 
             {
@@ -26,18 +25,21 @@ namespace PrintMultiples
     
         private static void checkMultiples(int numberCounter)
         {
-          if(numberCounter%5==0&numberCounter%3==0){
-             Console.Write("M-5, ");
-           }
-          else if(numberCounter%3==0){
-             Console.Write("M-3, ");
-           }
-          else if(numberCounter%5==0){
-             Console.Write("M-3-5, ");
+          if(numberCounter%5==0){
+              if(numberCounter%3==0){
+                Console.Write("M-3-5, ");
+              }
+              else
+              {
+               Console.Write("M-5, ");
+              }
             }
-            else
-            {
-             Console.Write(numberCounter+", ");
+          else if(numberCounter%3==0)
+              {
+              Console.Write("M-3, ");
+              }
+          else{
+               Console.Write(numberCounter+", ");
             }
         }
     }    

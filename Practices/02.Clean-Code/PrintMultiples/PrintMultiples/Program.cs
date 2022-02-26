@@ -13,18 +13,31 @@ namespace PrintMultiples
         {
             for(int numberCounter = number; numberCounter <= 100; numberCounter++)
             {
-                if(numberCounter%5==0){
-                 Console.Write("M-5, ");
-                }
-                else if(numberCounter%3==0){
-                 Console.Write("M-3, ");
-                }
-                else if(numberCounter%15==0){
-                 Console.Write("M-3-5, ");
-                }
-                else{
-                 Console.Write(numberCounter+", ");
-                } 
+             try
+            {
+             checkMultiples(numberCounter);
+             
+            }
+            catch 
+            {
+            }
+            }
+        }
+    
+        private static void checkMultiples(int numberCounter)
+        {
+          if(numberCounter%5==0&numberCounter%3==0){
+             Console.Write("M-5, ");
+           }
+          else if(numberCounter%3==0){
+             Console.Write("M-3, ");
+           }
+          else if(numberCounter%5==0){
+             Console.Write("M-3-5, ");
+            }
+            else
+            {
+             Console.Write(numberCounter+", ");
             }
         }
     }    

@@ -17,8 +17,7 @@ namespace PrintPrimes
 
     }
 
-    private static void PrintPrimes(int number)
-    {
+    private static void PrintPrimes(int number){
       
       if (number==0){
         Console.WriteLine ("-------------------------------------------");
@@ -35,6 +34,7 @@ namespace PrintPrimes
         Console.WriteLine("----------------------------");
         int cont = 0;
         for (int i = 2; i <= number; i++){  
+
           for (int j = 1; j <= i; j++){
             if (i % j == 0){ 
               cont = cont + 1;

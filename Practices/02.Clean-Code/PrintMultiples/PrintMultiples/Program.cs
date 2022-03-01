@@ -19,20 +19,20 @@ namespace PrintMultiples
             string ListNumbers = "";
             for (int i = 1; i <= number; i++)
             {
-                //ListNumbers += isMultiple(i , 3) ? isMultiple(i , 5) ? (i - 3 - 5)+"" : (i - 3)+"" : isMultiple(i , 5) ? (i-5)+"" : (i)+"";
+                //ListNumbers += isMultiple(i , 3) ? isMultiple(i , 5) ? (M-3-5)+"" : (M-3)+"" : isMultiple(i , 5) ? (M-5)+"" : (i)+"";
 
                 if(isMultiple(i , 3)){
 
                     if(isMultiple(i , 5))
                     {
-                        ListNumbers += (i-3-5)+"";
+                        ListNumbers += "M-3-5";
                     }else{
-                        ListNumbers += (i-3)+"";
+                        ListNumbers += "M-3";
                     }
 
                 }else if(isMultiple(i , 5)){
 
-                    ListNumbers += (i-5)+"";
+                    ListNumbers += "M-5";
 
                 }else{
 

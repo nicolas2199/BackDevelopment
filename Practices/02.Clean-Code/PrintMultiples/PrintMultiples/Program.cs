@@ -21,7 +21,8 @@ namespace PrintMultiples
             {
                 //ListNumbers += isMultiple(i , 3) ? isMultiple(i , 5) ? (M-3-5)+"" : (M-3)+"" : isMultiple(i , 5) ? (M-5)+"" : (i)+"";
 
-                if(isMultiple(i , 3)){
+                if(isMultiple(i , 3))
+                {
 
                     if(isMultiple(i , 5))
                     {
@@ -30,7 +31,8 @@ namespace PrintMultiples
                         ListNumbers += "M-3";
                     }
 
-                }else if(isMultiple(i , 5)){
+                }else if(isMultiple(i , 5))
+                {
 
                     ListNumbers += "M-5";
 

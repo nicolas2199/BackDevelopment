@@ -25,6 +25,8 @@ namespace PrintPrimes
       // Error: Invalid Number
     }
     private static void PrintPrimes(int number){
+
+      //condicionadores, 1 y 0 no son primos
       if (number==0){
         Console.WriteLine ("Este digito no es valido");
       }
@@ -32,16 +34,23 @@ namespace PrintPrimes
         Console.WriteLine ("El numero 1 no cuenta como primo.");
       }
       else{
+
+        //contador de cuantos numeros son multiplos del numero indicaco
+        
         int cont = 0;
+        
+
 
         for (int i = 2; i <= number; i++){  
-          
+
         for (int j = 1; j <= i; j++){
                if (i % j == 0){ 
                   cont = cont + 1;
                }
             }
+
             if (cont <= 2){ 
+              //si el numero solo tiene 2 numeros multiplos, significa que es primo
                Console.WriteLine(i);
             }
             cont = 0;

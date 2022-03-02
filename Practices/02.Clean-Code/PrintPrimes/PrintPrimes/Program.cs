@@ -45,7 +45,6 @@ namespace PrintPrimes
             }
             cont = 0;
          }
-         Console.ReadKey();
       }
     }
   }

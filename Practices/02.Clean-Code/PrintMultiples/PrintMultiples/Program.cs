@@ -9,28 +9,26 @@ namespace PrintMultiples
         }
         
         static void PrintMultiples(){
-           string texto1="m-3";
-           string texto2="m-5";
-           string texto3="m-3m-5";
+           string mensajeMultiplo3="m-3";
+           string mensajeMultiplo5="m-5";
+           string mensajeMultiploAmbos="m-3m-5";
            int variable=0;
               
-
-
-           for( int i = 0 ; i<=100; i++){
-          variable=NumerosALetras(i);
+           for( int llenarNumeros = 0 ; llenarNumeros<=100; llenarNumeros++){
+          variable=NumerosALetras(llenarNumeros);
              if (variable==3){
                
-               Console.WriteLine(texto1);
+               Console.WriteLine(mensajeMultiplo3);
           
              }
             else if(variable==5){
-               Console.WriteLine(texto2);
+               Console.WriteLine(mensajeMultiplo5);
              }
             else  if(variable==1){
-               Console.WriteLine(texto3);
+               Console.WriteLine(mensajeMultiploAmbos);
              }
              else 
-             Console.WriteLine(i);
+             Console.WriteLine(llenarNumeros);
 
         }
 

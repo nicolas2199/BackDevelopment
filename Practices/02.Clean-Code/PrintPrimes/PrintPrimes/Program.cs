@@ -19,33 +19,7 @@ namespace PrintPrimes
 
     private static void PrintPrimes(int number)
     {
-      int n = 2;
 
-        
-      while(n <= number){
-
-            
-        bool esPrimo = true;
-
-            
-        for (int i = 2; i < n; i++) {
-            if(n % i == 0)
-            {
-              esPrimo = false;
-              break;
-           }
-
-          }
-
-            
-          if(esPrimo)
-          {
-           Console.WriteLine(n);
-          }
-            
-          n++;
-
-        }
       switch (number){
         case 0:
           Console.WriteLine("Invalid Number");
@@ -53,13 +27,45 @@ namespace PrintPrimes
         case 1:
           Console.WriteLine("Is not prime");
           break;
-      }
-      // Logo to iterate unit the number
-       //Validate is the index is Prime
-        // Loop from  to number
-          // return Truee ->> Not Prime
-           //if is prime 
+      } 
+
+      
+    
+      int currentNumber = 2;
+
+        
+      while(currentNumber <= number){
+
             
+        bool esPrimo = true;
+
+            
+        for (int baseMultiple = 2; baseMultiple < currentNumber; baseMultiple++) {
+            if(IsMultiple(currentNumber, baseMultiple))
+            {
+              esPrimo = false;
+              break;
+           }
+
+          }
+          if(esPrimo)
+          {
+           Console.WriteLine(currentNumber);
+          }
+            
+          currentNumber++;
+
+        }
     }
+  
+  public static bool IsMultiple(int currentNumber, int baseMultiple)
+  {
+    return currentNumber % baseMultiple == 0;
+  }
+  private static bool isPrime(int currentNumber)
+  {
+    
+    return true;
+  }
   }
 }

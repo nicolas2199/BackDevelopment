@@ -56,20 +56,20 @@ namespace PrintMultiples
             return resultMultiple;
         }
 
-        // private static void PrintResultMultiple(int currentNumber)
-        // {
-        //     if(IsMultiple3(currentNumber)==0 && IsMultiple5(currentNumber)==0)
-        //     {
-        //         return Console.WriteLine("M-3-5");
-        //     }
-        //     else if (IsMultiple3(currentNumber)==0)
-        //     {
-        //         return Console.WriteLine("M-3");
-        //     }
-        //     else if (IsMultiple5(currentNumber)==0)
-        //     {
-        //         return Console.WriteLine("M-5");
-        //     }
-        // }
+        private static void PrintResultMultiple(int currentNumber)
+        {
+            if(IsMultiple3(currentNumber)==0 && IsMultiple5(currentNumber)==0)
+            {
+                Console.WriteLine("M-3-5");
+            }
+            else if (IsMultiple3(currentNumber)==0)
+            {
+                Console.WriteLine("M-3");
+            }
+            else if (IsMultiple5(currentNumber)==0)
+            {
+                Console.WriteLine("M-5");
+            }
+        }
     }
 }

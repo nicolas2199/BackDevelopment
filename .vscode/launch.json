@@ -13,9 +13,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/Practices/02.Clean-Code/PrintPrimes/PrintPrimes/bin/Debug/net5.0/PrintPrimes.dll",
+            "program": "${workspaceFolder}/Practices/02.Clean-Code/PrintMultiples/PrintMultiples/bin/Debug/net5.0/PrintMultiples.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/Practices/02.Clean-Code/PrintPrimes/PrintPrimes",
+            "cwd": "${workspaceFolder}/Practices/02.Clean-Code/PrintMultiples/PrintMultiples",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false

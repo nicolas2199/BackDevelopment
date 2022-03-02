@@ -22,23 +22,23 @@ namespace PrintMultiples
             {
                 if(IsMultiple3(currentNumber)==resultTotal && IsMultiple5(currentNumber)==resultTotal)
                 {
-                    Console.WriteLine("M-3-5");
+                    Console.Write("M-3-5,");
                     // PrintResultMultiple(currentNumber);
                 }
                 else if(IsMultiple3(currentNumber)==resultTotal)
                 {
-                    Console.WriteLine("M-3");
+                    Console.Write("M-3,");
                     // PrintResultMultiple();
                 }
                 else 
                 if(IsMultiple5(currentNumber)==resultTotal)
                 {
-                    Console.WriteLine("M-5");
+                    Console.Write("M-5,");
                     // PrintResultMultiple(currentNumber);
                 }
                 else
                 {
-                    Console.WriteLine(currentNumber);
+                    Console.Write(currentNumber+",");
                 }
                 
             }
@@ -56,20 +56,20 @@ namespace PrintMultiples
             return resultMultiple;
         }
 
-        private static void PrintResultMultiple(int currentNumber)
-        {
-            if(IsMultiple3(currentNumber)==0 && IsMultiple5(currentNumber)==0)
-            {
-                Console.WriteLine("M-3-5");
-            }
-            else if (IsMultiple3(currentNumber)==0)
-            {
-                Console.WriteLine("M-3");
-            }
-            else if (IsMultiple5(currentNumber)==0)
-            {
-                Console.WriteLine("M-5");
-            }
-        }
+        // private static void PrintResultMultiple(int currentNumber)
+        // {
+        //     if(IsMultiple3(currentNumber)==0 && IsMultiple5(currentNumber)==0)
+        //     {
+        //         Console.WriteLine("M-3-5");
+        //     }
+        //     else if (IsMultiple3(currentNumber)==0)
+        //     {
+        //         Console.WriteLine("M-3");
+        //     }
+        //     else if (IsMultiple5(currentNumber)==0)
+        //     {
+        //         Console.WriteLine("M-5");
+        //     }
+        // } 
     }
 }

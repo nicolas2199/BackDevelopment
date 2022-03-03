@@ -12,6 +12,7 @@ namespace Debugging
             int iUnitQty = 100;
             double dUnitCost = 1.03;
             Debug.WriteLine("Debug: Iniciando depuracion de producto");
+            
         }
     }
 }

@@ -16,7 +16,7 @@ static void Main(string[] args)
 
     private static void PrintMultiples(int maxvalue){
 
-        Console.WriteLine(GetMultiples(maxvalue));
+     Console.WriteLine(GetMultiples(maxvalue));
         
     }
 
@@ -32,7 +32,7 @@ static void Main(string[] args)
         {
             if (CheckIfItsMultiple(currentNumber, 3) && CheckIfItsMultiple(currentNumber, 5))
             {
-            listMultiples.Append("M-3-5"); 
+            listMultiples.Append("M-3-5");   
             }
             else if(CheckIfItsMultiple(currentNumber, 5)){
             listMultiples.Append("M-5"); 

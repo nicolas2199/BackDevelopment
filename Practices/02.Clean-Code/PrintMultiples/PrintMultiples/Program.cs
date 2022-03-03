@@ -13,13 +13,7 @@ namespace PrintMultiples
         {
             for(int numberCounter = number; numberCounter <= 100; numberCounter++)
             {
-             try
-            {
              checkMultiples(numberCounter);
-            }
-            catch 
-            {
-            }
             }
         }
     

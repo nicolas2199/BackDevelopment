@@ -7,7 +7,7 @@ namespace PrintMultiples
         static void Main(string[] args)
         {
             int contador= 1;
-            while (contador >= 100)
+            while (contador <=  100)
             
             
              if (multiploDeTres==0 && multiploDeCinco==0)

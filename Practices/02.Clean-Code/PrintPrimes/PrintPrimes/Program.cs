@@ -16,7 +16,6 @@ namespace PrintPrimes
       // Error: 1 Is not Prime
 
     }
-
      //loop to iterate until the number
         //Validate is the index is prime
           //loop from 2 to number
@@ -51,6 +50,11 @@ namespace PrintPrimes
         {
           Console.Write("1 Is not Prime");
         }
-    }
+    }//PrintPrimes
   }
+
+  /* private bool IsMultipleOg(int number, int baseMultiple)
+  {
+    return number % baseMultiple 
+  } */
 }

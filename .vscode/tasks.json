@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/Practices/02.Clean-Code/PrintPrimes/PrintPrimes/PrintPrimes.csproj",
+                "${workspaceFolder}/Practices/02.Clean-Code/Debuggin/Debuggin.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/Practices/02.Clean-Code/PrintPrimes/PrintPrimes/PrintPrimes.csproj",
+                "${workspaceFolder}/Practices/02.Clean-Code/Debuggin/Debuggin.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/Practices/02.Clean-Code/PrintPrimes/PrintPrimes/PrintPrimes.csproj"
+                "${workspaceFolder}/Practices/02.Clean-Code/Debuggin/Debuggin.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

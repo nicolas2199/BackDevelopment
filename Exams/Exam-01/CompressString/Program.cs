@@ -19,7 +19,7 @@ namespace CompressString
       {
         Compress("aabcccccaaa");
         // aabcccccaaa => a2b1c5a3
-        Compress("XXXoooxxxOOO");
+   /*      Compress("XXXoooxxxOOO");
         // XXXoooxxxOOO => X3o3x3O3
         Compress("abbcca");
         // abbcca => abbcca
@@ -30,19 +30,19 @@ namespace CompressString
         Compress("X".PadRight(256, 'X'));
         // Error: The length of the string must be less than 255 characters.
         Compress("a1b2c5a3");
-        // Error: Only alphabetic characters [A-Z,a-z] are allowed
+        // Error: Only alphabetic characters [A-Z,a-z] are allowed */
       }
 
       private static void Compress(string input)
       {
-         int length = iniString.size();
+         int inputLength = input.size();
          string result = "";
             
-         char index = iniString[0]; 
+         char index = input[0]; 
          int number = 0;
-         for(int i = 0; i < length; i++)
+         for(int i = 0; i < inputLength; i++)
          {
-            if(index == iniString[i])
+            if(index == input[i])
                 {
                     number++;
                 }
@@ -51,9 +51,9 @@ namespace CompressString
                     // Cuando el carácter repetido cambia, el carácter se insertará
                     result += index;
                     result += std::to_string(number);//number + '0';
-                    if(i + 1 < length)
+                    if(i + 1 < inputLength)
                     {
-                        index = iniString[i];
+                        index = input[i];
                     }
                     else
                     {
@@ -67,15 +67,14 @@ namespace CompressString
             result += index;
             result += std::to_string(number);
             
-            if(result.size() < length)
+            if(result.size() < inputLength)
             {
                 return result;
             }
             else
             {
-                return iniString;
+                return input;
             }
-        throw new NotImplementedException();
       }
 
    }

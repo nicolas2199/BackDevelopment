@@ -9,53 +9,89 @@
 /// - Los caracteres se diferencian por mayusculas o minusculas (Case Sensitive)
 /// </summary>
 
+
 using System;
 
 namespace CompressString
 {
    public class Program
    {
-      public static void Main()
+      public static void Main(string[] args)
       {
-        Compress("aabcccccaaa");
-        // aabcccccaaa => a2b1c5a3
-        Compress("XXXoooxxxOOO");
-        // XXXoooxxxOOO => X3o3x3O3
-        Compress("abbcca");
-        // abbcca => abbcca
-        Compress("aabbcc");
-        // aabbcc => aabbcc
-        Compress("");
+        
+        //Console.WriteLine(Compress(""));
         // Error: the string must not be null or empty
-        Compress("X".PadRight(256, 'X'));
+        Console.WriteLine(Compress("aabcccccaaa"));
+        // aabcccccaaa => a2b1c5a3
+        Console.WriteLine(Compress("XXXoooxxxOOO"));
+        // XXXoooxxxOOO => X3o3x3O3
+        Console.WriteLine(Compress("abbcca"));
+        // abbcca => abbcca
+        Console.WriteLine(Compress("aabbcc"));
+        // aabbcc => aabbcc
+        Console.WriteLine(Compress("X".PadRight(256, 'X')));
         // Error: The length of the string must be less than 255 characters.
-        Compress("a1b2c5a3");
+        Console.WriteLine(Compress("a1b2c5a3"));
         // Error: Only alphabetic characters [A-Z,a-z] are allowed
       }
 
-      private static void Compress(string input)
+      static string Compress(string input)
       {
-        if (string.IsNullOrEmpty(input)){
-            Console.WriteLine("Error: the string must not be null or empty");
-            return;
-        }
-        if (input.Length > MAX_LENGTH){
-            Console.WriteLine("Error: The length of the string must be less than 255 characters");
-            return;
-        }
-        if (!IsAlpabethic(input)){
-            Console.WriteLine("Error: Only alphabetic characters [A-Z,a-z] are allowed");
-            return;
-        }
+        int stringSize = input.Length;
+            string zipResult = "";
+            int MAX_LENGTH = 255;
+            char compareLetter = input[0];
+            int repetitions = 0;
 
-        string stringCompressed = ZipString(input);
+            if (input.Length>MAX_LENGTH){
+                Console.WriteLine("Error: The length of the string must be less than 255 characters.");
+            }
 
-        if (stringCompressed.Length >= input.Length){
-            stringCompressed = input;
+            if (!IsAlpabethic(input)){
+                Console.WriteLine("Error: Only alphabetic characters [A-Z,a-z] are allowed.");
+            }
+            else{
+                for (int position = 0; position < stringSize; position++){
+                if (compareLetter == input[position]){
+                    repetitions += 1;
+                }
+                else{
+                    zipResult += compareLetter;
+                    zipResult += repetitions.ToString();
+                    if ( position + 1 < stringSize){
+                        compareLetter = input[position];
+                    }
+                    else{
+                        break;
+                    }
+                    repetitions = 1;
+
+                   }
+                }
+            }
+
+            zipResult += compareLetter;
+            zipResult += repetitions.ToString();
+
+            if(zipResult.Length<stringSize){
+                return zipResult;
+            }
+            else{
+                return input;
+            }
+
+
         }
-
-        Console.WriteLine("{0} => {1}", input, stringCompressed);
+        public static bool IsAlpabethic(string input){
+          string lowerString = input.ToLower();
+          foreach (var character in lowerString)
+          {
+              if(!Char.IsLetter(character)){
+                  return false;
+              }
+          }
+          return true;
+      }
       }
 
    }
-}

@@ -1,4 +1,4 @@
-﻿
+
 /// <summary>
 /// Implemente un método para realizar la compresión básica de cadenas utilizando el recuento de caracteres repetidos.
 /// Criterios de Aceptación:
@@ -11,7 +11,6 @@
 /// </summary>
 
 using System;
-
 namespace CompressString
 {
    public class Program
@@ -36,8 +35,58 @@ namespace CompressString
 
       private static void Compress(string input)
       {
-        throw new NotImplementedException();
+        const int MAX_LENGTH = 255;
+        if (string.IsNullOrEmpty(input))
+        {
+            Console.WriteLine("Error: the string must not be null or empty");
+            return;
+        }
+
+        if (input.Length > MAX_LENGTH)
+        {
+            Console.WriteLine("Error: The length of the string must be less than 255 characters.");
+            return; 
+        }
+
+        if(!IsAlpabethic(input))
+        {
+          Console.WriteLine("Error: Only alphabetic characters [A-Z,a-z] are allowed");
+          return; 
+        }
+
+       /*  string  compressedWord = ZipString(input);
+
+        if(compressedWord.Length >= input.Length)
+        {
+            compressedWord = input;
+        } */
+
+
+        Console.WriteLine("{0} => {1} ", input /* compressedWord */ );
+
       }
 
+      public static bool IsAlpabethic(string input)
+      {
+        string lowerString = input.ToLower();
+        foreach (var character in lowerString)
+        {
+          if(!Char.IsLetter(character))
+          {
+            return false;
+          }
+        }
+        return true;
+      }
+
+    /*   public static string ZipString(string input)
+      {
+        int size = input.Length;
+        string lastValue = " ";
+        char compareLecter = input[0];
+        int loop = 0;
+        
+
+      } */
    }
 }

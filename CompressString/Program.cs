@@ -90,10 +90,14 @@ namespace CompressString
                 {
                     sbChar.Append($"{CurrentCharacter}{contbyCharacter}");
                     CurrentCharacter = input[i];
+                    contbyCharacter = 0;
                 }
-                /* sbChar.Append($"{CurrentCharacter}, {contbyCharacter}");
-                CurrentCharacter = input[i]; */
                 contbyCharacter++;
+
+                if (i == input.Length-1)
+                {
+                    sbChar.Append($"{CurrentCharacter}{contbyCharacter}");
+                }
             }
             return sbChar.ToString();
         }

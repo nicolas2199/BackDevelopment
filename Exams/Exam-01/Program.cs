@@ -17,7 +17,7 @@ namespace CompressString
             // aabbcc => aabbcc
             //Compress("");
             // Error: the string must not be null or empty
-            Console.WriteLine(Compress("X".PadRight(256, 'X')));
+            //Console.WriteLine(Compress("X".PadRight(256, 'X')));
             // Error: The length of the string must be less than 255 characters.
             Console.WriteLine(Compress("a1b2c5a3"));
             // Error: Only alphabetic characters [A-Z,a-z] are allowed

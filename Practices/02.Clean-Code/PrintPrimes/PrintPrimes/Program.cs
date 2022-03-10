@@ -11,36 +11,59 @@ namespace PrintPrimes
             PrintPrimes(10);
             // 2,3,5,7
             PrintPrimes(0);
-            // Error: Invalid Number
+            // Error: Invalid numero
             PrintPrimes(1);
             // Error: 1 Is not Prime
 
         }
-     static void PrintPrimes(int number)
+        static void PrintPrimes(int numero)
         {
-            int contador = 0;
 
+            Console.WriteLine(ObtenerPrimes(numero));
 
-            for (int i = 1; i < (number + 1); i++)
+        }
+
+        public static string ObtenerPrimes(int numero)
+        {
+
+            int contadornumero = 0;
+            string imprimerPrimo = "";
+
+            if (numero == 0)
             {
-                if (number % i == 0)
+                Console.WriteLine("Error : Invalid numero");
+            }
+
+            if (numero == 1)
+            {
+                Console.WriteLine("Error : 1 Is not Prime");
+            }
+
+            for (int i = 1; i <= numero; i++)
+            {
+
+                if (EsPrimo(numero))
                 {
-                    contador++;
+
+                    imprimerPrimo += i.ToString() + ",";
                 }
             }
-            if (number == 0)
-            {
-                Console.WriteLine("Error: Numero invalido");
-            }
-            if (contador != 2)
-            {
-                Console.WriteLine(number);
-            }
-            else
-            {
-                Console.WriteLine("1 no es primo");
-            }
+            return imprimerPrimo;
+        }
 
+        static bool EsPrimo(int numero)
+        {
+
+            {
+                for (int numeroPrimo = 2; numeroPrimo < numero; numeroPrimo++)
+                {
+                    if ((numero % numeroPrimo) == 0)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
         }
 
     }

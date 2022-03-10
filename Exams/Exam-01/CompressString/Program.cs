@@ -19,23 +19,25 @@ namespace CompressString
       {
         Compress("aabcccccaaa");
         // aabcccccaaa => a2b1c5a3
-        Compress("XXXoooxxxOOO");
+        //Compress("XXXoooxxxOOO");
         // XXXoooxxxOOO => X3o3x3O3
-        Compress("abbcca");
+        //Compress("abbcca");
         // abbcca => abbcca
-        Compress("aabbcc");
+        //Compress("aabbcc");
         // aabbcc => aabbcc
-        Compress("");
+        //Compress("");
         // Error: the string must not be null or empty
-        Compress("X".PadRight(256, 'X'));
+        //Compress("X".PadRight(256, 'X'));
         // Error: The length of the string must be less than 255 characters.
-        Compress("a1b2c5a3");
+        //Compress("a1b2c5a3");
         // Error: Only alphabetic characters [A-Z,a-z] are allowed
       }
 
       private static void Compress(string input)
       {
-        throw new NotImplementedException();
+          for (int i = 0; i < input.Length; i++)
+            Console.WriteLine("{0}", cadena.Substring(i, 1));
+        //throw new NotImplementedException();
       }
 
    }

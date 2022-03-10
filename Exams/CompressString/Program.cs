@@ -35,8 +35,44 @@ namespace CompressString
 
       private static void Compress(string input)
       {
-        throw new NotImplementedException();
+
+        if(input="")
+        {
+            Console.WriteLine("Error: the string must not be null or empty");
+        }
+        if(input.Length>250)
+        {
+            Console.WriteLine("Error: The length of the string must be less than 255 charactrs.");
+        }
+
+        cadena = "";
+        counterbyCharacter=0;
+        currentCharacter=input[0];
+        stringBuilder compressedText = new stringBuilder[];
+        
+        for(int currentchar=0; currentchar<input.Length; currentchar++)
+        {
+            if(input[currentchar]==input[currentchar++])
+            {
+              countCharacter++;
+            }
+
+            Console.WriteLine(cadena);
+        }
+
       }
 
+      public static bool isAlphabetic(string input)
+      {
+        string lowerString = input.ToLower();
+        foreach (var character in lowerString)
+        {
+          if(!Char.IsLetter(character))
+          {
+           return false;
+          }
+        }
+          return true;
+      }
    }
 }

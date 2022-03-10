@@ -19,28 +19,59 @@ namespace CompressString
       {
         Compress("aabcccccaaa");
         // aabcccccaaa => a2b1c5a3
-   /*      Compress("XXXoooxxxOOO");
+        Compress("XXXoooxxxOOO");
         // XXXoooxxxOOO => X3o3x3O3
         Compress("abbcca");
         // abbcca => abbcca
         Compress("aabbcc");
         // aabbcc => aabbcc
-        Compress("");
-        // Error: the string must not be null or empty
+/*         Compress("");
+        // Error: the string must not be null or empty */
         Compress("X".PadRight(256, 'X'));
         // Error: The length of the string must be less than 255 characters.
         Compress("a1b2c5a3");
-        // Error: Only alphabetic characters [A-Z,a-z] are allowed */
+        // Error: Only alphabetic characters [A-Z,a-z] are allowed 
       }
+     static void Compress(string input)
+       {
+        int MAX_LENGTH= 254;
 
-      private static void Compress(string input)
+/*          if (input = "")
+            {
+             Console.WriteLine("Error: the string must not be null or empty.");
+             return;
+            }  */
+
+        if (input.Length > MAX_LENGTH)
+            {
+             Console.WriteLine("Error: The length of the string must be less than 255 characters.");
+            }
+
+        else if(!IsAlpabethic(input)){
+             Console.WriteLine("Error: Only alphabetic characters [A-Z,a-z] are allowed");
+            }
+        else
+        {
+         string ResultOfZipString = ZipString(input);
+         if (ResultOfZipString.Length >= input.Length)
+           {
+               Console.WriteLine(input+" => "+input);
+           }
+         else
+         {
+            Console.WriteLine(input+" => "+ResultOfZipString); 
+         }
+       }
+     }
+     static string ZipString(string input)
       {
-         int inputLength = input.size();
-         string result = "";
-            
-         char index = input[0]; 
-         int number = 0;
-         for(int i = 0; i < inputLength; i++)
+        string ZipResult = "";
+        int chainLength = input.Length;
+        char index = input[0];
+        int number = 0;
+
+
+         for(int i = 0; i < chainLength; i++)
          {
             if(index == input[i])
                 {
@@ -49,9 +80,9 @@ namespace CompressString
                 else
                 {
                     // Cuando el carácter repetido cambia, el carácter se insertará
-                    result += index;
-                    result += std::to_string(number);//number + '0';
-                    if(i + 1 < inputLength)
+                    ZipResult += index;
+                    ZipResult += number.ToString();
+                    if(i + 1 < chainLength)
                     {
                         index = input[i];
                     }
@@ -64,18 +95,29 @@ namespace CompressString
             }
     
                     // Necesita actualizar la cadena al final de la función, porque el último conjunto de caracteres repetidos no se ha colocado en la cadena comprimida
-            result += index;
-            result += std::to_string(number);
+            ZipResult += index;
+            ZipResult += number.ToString();
             
-            if(result.size() < inputLength)
+            if(ZipResult.Length < chainLength)
             {
-                return result;
+                return ZipResult;
             }
             else
             {
                 return input;
             }
       }
-
+    static bool IsAlpabethic(string input)
+     {
+        string lowerString = input.ToLower();
+        foreach (var character in lowerString)
+        {
+         if(!Char.IsLetter(character))
+         {
+            return false;
+         }
+        }
+        return true;
+     } 
    }
 }

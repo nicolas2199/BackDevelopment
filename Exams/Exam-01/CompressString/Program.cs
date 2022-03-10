@@ -25,7 +25,7 @@ namespace CompressString
         // abbcca => abbcca
         //Compress("aabbcc");
         // aabbcc => aabbcc
-        //Compress("");
+        Compress("");
         // Error: the string must not be null or empty
         //Compress("X".PadRight(256, 'X'));
         // Error: The length of the string must be less than 255 characters.
@@ -35,8 +35,24 @@ namespace CompressString
 
       private static void Compress(string input)
       {
-          for (int i = 0; i < input.Length; i++)
-            Console.WriteLine("{0}", input.Substring(i, 1));
+        Console.WriteLine("Compressing " + input);
+        int inputLength = input.Length;
+
+        foreach (char c in input){
+          int count = 0;
+          for(int i = 0; i < inputLength; i++){
+              //Console.WriteLine("Comparando " + c + "con " + input[i]);
+            if (c == input[i]){
+                count++;
+            }
+          }
+        Console.Write(c);
+        Console.Write(count);
+        }
+
+        if(input == ""){
+          Console.WriteLine("Error: the string must not be null or empty");
+        }
         //throw new NotImplementedException();
       }
 

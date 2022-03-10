@@ -36,7 +36,7 @@ namespace CompressString
       private static void Compress(string input)
       {
           for (int i = 0; i < input.Length; i++)
-            Console.WriteLine("{0}", cadena.Substring(i, 1));
+            Console.WriteLine("{0}", input.Substring(i, 1));
         //throw new NotImplementedException();
       }
 

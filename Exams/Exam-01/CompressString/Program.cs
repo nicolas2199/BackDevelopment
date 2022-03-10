@@ -35,7 +35,26 @@ namespace CompressString
 
       private static void Compress(string input)
       {
-        throw new NotImplementedException();
+        if (string.IsNullOrEmpty(input)){
+            Console.WriteLine("Error: the string must not be null or empty");
+            return;
+        }
+        if (input.Length > MAX_LENGTH){
+            Console.WriteLine("Error: The length of the string must be less than 255 characters");
+            return;
+        }
+        if (!IsAlpabethic(input)){
+            Console.WriteLine("Error: Only alphabetic characters [A-Z,a-z] are allowed");
+            return;
+        }
+
+        string stringCompressed = ZipString(input);
+
+        if (stringCompressed.Length >= input.Length){
+            stringCompressed = input;
+        }
+
+        Console.WriteLine("{0} => {1}", input, stringCompressed);
       }
 
    }

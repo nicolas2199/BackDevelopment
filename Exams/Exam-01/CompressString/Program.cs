@@ -36,11 +36,11 @@ namespace CompressString
        {
         int MAX_LENGTH= 254;
 
-/*          if (input = "")
+          if (input == "")
             {
              Console.WriteLine("Error: the string must not be null or empty.");
              return;
-            }  */
+            }  
 
         if (input.Length > MAX_LENGTH)
             {

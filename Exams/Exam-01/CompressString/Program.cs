@@ -35,13 +35,11 @@ namespace CompressString
 
       private static void Compress(string input)
       {
-        Console.WriteLine("Compressing " + input);
         int inputLength = input.Length;
 
         foreach (char c in input){
           int count = 0;
           for(int i = 0; i < inputLength; i++){
-              //Console.WriteLine("Comparando " + c + "con " + input[i]);
             if (c == input[i]){
                 count++;
             }

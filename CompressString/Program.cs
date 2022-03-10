@@ -82,16 +82,19 @@ namespace CompressString
         {
             StringBuilder sbChar = new StringBuilder();
             char CurrentCharacter = input[0];
-            int contCbyharacter = 0;
+            int contbyCharacter = 0;
 
             for (int i = 0; i < input.Length; i++)
             {
                 if(CurrentCharacter != input[0])
                 {
-                    sbChar.Append($"{CurrentCharacter}, {contCbyharacter}");
+                    sbChar.Append($"{CurrentCharacter}, {contbyCharacter}");
                     CurrentCharacter = input[i];
+                    contbyCharacter++;
                 }
-                contCbyharacter++;
+                sbChar.Append($"{CurrentCharacter}, {contbyCharacter}");
+                CurrentCharacter = input[i];
+                contbyCharacter = 1;
             }
             return sbChar.ToString();
         }

@@ -16,19 +16,7 @@ namespace PrintPrimes
             // Error: 1 Is not Prime
 
         }
-
-<<<<<<< HEAD
-    private static void PrintPrimes(int number)
-    {
-     int contador= 0;
-     int numeroInicial=1;
-
-     while(numeroInicial <= 13){
-       for (int i =1; i<= number);
-     }
-     
-=======
-        private static void PrintPrimes(int number)
+     static void PrintPrimes(int number)
         {
             int contador = 0;
 
@@ -54,7 +42,7 @@ namespace PrintPrimes
             }
 
         }
->>>>>>> 780c2e7451ce5cc0c94e969fc699a81cbe2228d1
+
     }
 }
 

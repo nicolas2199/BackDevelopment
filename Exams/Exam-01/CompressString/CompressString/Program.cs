@@ -148,7 +148,7 @@ namespace CompressString
                                     count++;
                                     if (count == 3)
                                     {
-                                        concat2 = "O3";
+                                        concat3 = "O3";
                                     }
                                 }
 

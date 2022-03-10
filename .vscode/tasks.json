@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/Exams/Exam-01/CompressString/bin/Debug/net5.0/CompressString.dll",
+                "${workspaceFolder}/Exams/Exam-01/CompressString/CompressString.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/Exams/Exam-01/CompressString/bin/Debug/net5.0/CompressString.dll",
+                "${workspaceFolder}/Exams/Exam-01/CompressString/CompressString.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/Exams/Exam-01/CompressString/bin/Debug/net5.0/CompressString.dll"
+                "${workspaceFolder}/Exams/Exam-01/CompressString/CompressString.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

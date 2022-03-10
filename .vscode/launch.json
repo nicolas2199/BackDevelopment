@@ -12,7 +12,7 @@
             // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/Exams/Exam-01/CompressString/bin/Debug/net5.0/CompressString.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/Exams/Exam-01/CompressString/bin/Debug/net5.0/CompressString.dll",
+            "cwd": "${workspaceFolder}/Exams/Exam-01/CompressString",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false

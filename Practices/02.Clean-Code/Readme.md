@@ -21,12 +21,12 @@ dotnet build .\PrintPrimes.csproj
 dotnet run .\PrintPrimes.csproj
 ```
 # Notas
-## PrintPrimes
-- No tiene Errores Ni Warnings (0.5)      = 
-- No tiene Codigo Innecesario  (0.5)      = 
-- Funciona y Cumple con el Objetivo (1.0) = 
-- El codigo Es Entendible (1.0)           = 
-- Cumple con el Codigo Limpio (2.0)       = 
+## PrintPrimes (0.0)
+- No tiene Errores Ni Warnings (0.5)      = 0.0 => Tiene un Warning
+- No tiene Codigo Innecesario  (0.5)      = 0.0 => tiene un catch Innecesario
+- Funciona y Cumple con el Objetivo (1.0) = 0.0 => No Cumple con el objetivo
+- El codigo Es Entendible (1.0)           = 0.5 => Parcialmente entendible
+- Cumple con el Codigo Limpio (2.0)       = 1.0 => Tiene Nociones pero no estan aplicando Clean Code
   Los Nombres de las variables y Funciones: (0.2/ cada una)
   - Revelan la intencion, es decir se sabe que hacen o que almacenan? = 
   - Los Nombres son claros o son confusos?                            = 
@@ -39,12 +39,12 @@ dotnet run .\PrintPrimes.csproj
   - Usan Nombres del dominio, del negocio, problema o solucion ?      = 
   - Cumplen con el Estandar de Pascal y Camel Case?                   = 
 
-## Print Multiples
-- No tiene Errores Ni Warnings (0.5)      = 
-- No tiene Codigo Innecesario  (0.5)      = 
-- Funciona y Cumple con el Objetivo (1.0) = 
-- El codigo Es Entendible (1.0)           = 
-- Cumple con el Codigo Limpio (2.0)       = 
+## Print Multiples (0.0)
+- No tiene Errores Ni Warnings (0.5)      = 0.5
+- No tiene Codigo Innecesario  (0.5)      = 0.0 => Las Vbles de validate no son Necesarias
+- Funciona y Cumple con el Objetivo (1.0) = 0.8 => no se elimino la ultima coma al final
+- El codigo Es Entendible (1.0)           = 1.0
+- Cumple con el Codigo Limpio (2.0)       = 1.2 => NO 
   Los Nombres de las variables y Funciones: (0.2/ cada una)
   - Revelan la intencion, es decir se sabe que hacen o que almacenan? = 
   - Los Nombres son claros o son confusos?                            = 
@@ -57,7 +57,7 @@ dotnet run .\PrintPrimes.csproj
   - Usan Nombres del dominio, del negocio, problema o solucion ?      = 
   - Cumplen con el Estandar de Pascal y Camel Case?                   = 
 
-## Debugging
+## Debugging (0.0)
 - No tiene Errores Ni Warnings (0.5)      = 
 - No tiene Codigo Innecesario  (0.5)      = 
 - Funciona y Cumple con el Objetivo (1.0) = 

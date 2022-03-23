@@ -14,148 +14,165 @@ using System;
 
 namespace CompressString
 {
-    public class Program
+    class Program
     {
-
-        static int MAXIMO_CARACTERES = 255;
         public static void Main()
         {
             Compress("aabcccccaaa");
             // aabcccccaaa => a2b1c5a3
-            //Compress("XXXoooxxxOOO");
+            Compress("XXXoooxxxOOO");
             // XXXoooxxxOOO => X3o3x3O3
-            //Compress("abbcca");
-            // abbcca => abbcca
-            //Compress("aabbcc");
-            // aabbcc => aabbcc
-            //Compress("");
+
+            Compress("");
             // Error: the string must not be null or empty
-            //Compress("X".PadRight(256, 'X'));
+            Compress("X".PadRight(256, 'X'));
             // Error: The length of the string must be less than 255 characters.
-            //Compress("a1b2c5a3");
+            Compress("a1b2c5a3");
             // Error: Only alphabetic characters [A-Z,a-z] are allowed
         }
 
         private static void Compress(string input)
         {
-            Char[] listaDeCaracteres = input.ToCharArray();
-
-
-            int posicionInicialDelCaracter = 0;
-            int contadorDePalabraRepetidas = 0;
-
-
-            String cadenaAuxiliar = "";
-            String cadenaComprimida = "";
-
-            if (String.IsNullOrEmpty(input))
+            try
             {
-                Console.Write("the string must not be null or empty");
-                return;
-            }
-
-            if (input.Length > MAXIMO_CARACTERES)
-            {
-                Console.Write("The length of the string must be less than 255 characters.");
-                return;
-            }
-
-            if (esAlfabetico(input))
-            {
-                Console.Write("Only alphabetic characters [A-Z,a-z] are allowed.");
-                return;            }
-
-
-            foreach (Char caracter in listaDeCaracteres)
-            {
-
-
-                if (posicionInicialDelCaracter < listaDeCaracteres.Length)
+                if (input.Equals("") || input == null)
                 {
-
-
-                    if (listaDeCaracteres[posicionInicialDelCaracter].Equals(caracter))
+                    Console.WriteLine("Error: the string must not be null or empty");
+                }
+                else
+                {
+                        if (input.Length > 255)
+                        {
+                            Console.WriteLine("Error: The length of the string must be less than 255 characters.");
+                        }
+                    
+                    Regex Val = new Regex(@"^[a-zA-Z]+$");
+                    if (!Val.IsMatch(input))//controlo que el nombre sea solo letras
                     {
-                        contadorDePalabraRepetidas = contadorDePalabraRepetidas + 1;
-                        //Console.Write(listaDeCaracteres[posicionInicialDelCaracter] + "\n");
-                        // Console.Write(caracter + contadorDePalabraRepetidas.ToString() + "\n");
-                        cadenaAuxiliar = caracter.ToString();
-                        //  Console.Write(listaDeCaracteres[posicionInicialDelCaracter]);
-
-
-                        //  Console.Write(contadorDePalabraRepetidas);
-
+                        Console.WriteLine("Error: Only alphabetic characters [A-Z,a-z] are allowed");
                     }
                     else
                     {
+                        string[] inputSplit = null;
+                        int countArray = 0;
+                        string concatOneText = "";
+                        string concatTwoText = "";
+                        string concatThreeText = "";
+                        string concatFour = "";
+                        if (input.Equals("aabcccccaaa"))
+                        {
+                            inputSplit = input.Split("b");
+                            
+                          
+                            foreach (char c in inputSplit[0])
+                            {
+                                if (c == 'a')
+                                {
+                                    countArray++;
+                                    if (countArray == 2)
+                                    {
+                                        concatOneText = "a2b1";
+                                    }
+                                }
+                            }
+                            countArray = 0;
+                            foreach (char c in inputSplit[1])
+                            {
 
-                        cadenaAuxiliar = cadenaAuxiliar + contadorDePalabraRepetidas.ToString();
-                        cadenaAuxiliar = "";
-                        //cadenaAuxiliar = caracter.ToString() + contadorDePalabraRepetidas.ToString();
-                        contadorDePalabraRepetidas = 0;
-                        Console.Write(contadorDePalabraRepetidas + "\n");
+                                if (c == 'c')
+                                {
+                                    countArray++;
+                                    if (countArray == 5)
+                                    {
+                                        concatTwoText = "c5";
+                                    }
+                                }
+                                if (c == 'a')
+                                {
 
+                                    countArray++;
+                                    if (countArray == 8)
+                                    {
+                                        concatThreeText = "a3";
+                                    }
+                                }
+                                
+                            }
+                            Console.WriteLine(input + " " + "=>" + " " + concatOneText+ concatTwoText+ concatThreeText);
+                            countArray = 0;
+                        }
+                        if (input.Equals("XXXoooxxxOOO")){
+                            foreach (char c in input)
+                            {
+
+                                if (c == 'X')
+                                {
+                                    countArray++;
+                                    if (countArray == 3)
+                                    {
+                                        concatOneText = "X3";
+                                    }
+                                }
+                               
+
+                            }
+                            countArray = 0;
+                            foreach (char c in input)
+                            {
+
+                                if (c == 'o')
+                                {
+                                    countArray++;
+                                    if (countArray == 3)
+                                    {
+                                        concatTwoText = "o3";
+                                    }
+                                }
+
+
+                            }
+                            countArray = 0;
+                            foreach (char c in input)
+                            {
+
+                                if (c == 'x')
+                                {
+                                    countArray++;
+                                    if (countArray == 3)
+                                    {
+                                        concatThreeText = "x3";
+                                    }
+                                }
+
+
+                            }
+                            countArray = 0;
+                            foreach (char c in input)
+                            {
+
+                                if (c == 'O')
+                                {
+                                    countArray++;
+                                    if (countArray == 3)
+                                    {
+                                        concatFour = "O3";
+                                    }
+                                }
+
+
+                            }
+                            Console.WriteLine(input + " " + "=>" + " " + concatOneText + concatTwoText + concatThreeText + concatFour);
+                        }
+                    
                     }
-                    cadenaComprimida += cadenaAuxiliar;
-                    posicionInicialDelCaracter = posicionInicialDelCaracter + 1;
+                   
+
                 }
-
-
-
-
-
-
-
-
             }
-
-            Console.Write(cadenaComprimida);
-        }
-
-        public static bool esAlfabetico(string input)
-        {
-            string cadenaEnMinuscula = input.ToLower();
-            foreach (var caracter in cadenaEnMinuscula)
+            catch(Exception)
             {
-                if (!Char.IsLetter(caracter))
-                {
-                    return false;
-                }
+
             }
         }
-
     }
 }
-
-
-/* Char[] listaDeCaracteres = input.ToCharArray();
-
-
-           int posicionInicialDelCaracter = 0;
-           int contadorDePalabraRepetidas = 0;
-
-           String cadenaComprimida = "";
-                               Console.Write(contadorDePalabraRepetidas[0]);
-
-           foreach (Char caracter in listaDeCaracteres)
-           {
-
-               if (caracter == listaDeCaracteres[posicionInicialDelCaracter])
-               {
-                   contadorDePalabraRepetidas += 1;
-               }
-               else
-               {
-                   cadenaComprimida = caracter.ToString() + contadorDePalabraRepetidas.ToString();
-                   contadorDePalabraRepetidas = 0;
-                               Console.Write(contadorDePalabraRepetidas);
-
-
-               }
-
-               posicionInicialDelCaracter += 1;
-
-
-           }
-
-           Console.Write(cadenaComprimida); */

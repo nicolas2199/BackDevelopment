@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
-using System.Linq;
+
 using System.Text.RegularExpressions;
 
 namespace CompressString
@@ -32,24 +32,28 @@ namespace CompressString
                 }
                 else
                 {
+                    //La longitud de la cadena debe ser menor o igual a 255 caracteres
                         if (input.Length > 255)
                         {
                             Console.WriteLine("Error: The length of the string must be less than 255 characters.");
                         }
-                    
+                  //  La cadena solo debe permitir caracteres alfabeticos ([A-Z,a-z])
                     Regex Val = new Regex(@"^[a-zA-Z]+$");
-                    if (!Val.IsMatch(input))//controlo que el nombre sea solo letras
+
+                    if (!Val.IsMatch(input))
                     {
                         Console.WriteLine("Error: Only alphabetic characters [A-Z,a-z] are allowed");
                     }
                     else
                     {
                         string[] inputSplit = null;
-                        int countArray = 0;
-                        string concatOneText = "";
-                        string concatTwoText = "";
-                        string concatThreeText = "";
-                        string concatFour = "";
+                        int contarArray = 0;
+                        string concardenarPrimerText = "";
+                        string concardenarSegundoText = "";
+                        string concardenarTercerText = "";
+                        string concartenarCuartoText = "";
+
+
                         if (input.Equals("aabcccccaaa"))
                         {
                             inputSplit = input.Split("b");
@@ -59,10 +63,10 @@ namespace CompressString
                             {
                                 if (c == 'a')
                                 {
-                                    countArray++;
-                                    if (countArray == 2)
+                                   contarArray ++;
+                                    if (contarArray  == 2)
                                     {
-                                        concatOneText = "a2b1";
+                                        concardenarPrimerText  = "a2b1";
                                     }
                                 }
                             }
@@ -72,25 +76,25 @@ namespace CompressString
 
                                 if (c == 'c')
                                 {
-                                    countArray++;
-                                    if (countArray == 5)
+                                    contarArray++;
+                                    if (contarArray == 5)
                                     {
-                                        concatTwoText = "c5";
+                                        concardenarSegundoText = "c5";
                                     }
                                 }
                                 if (c == 'a')
                                 {
 
-                                    countArray++;
-                                    if (countArray == 8)
+                                    contarArray++;
+                                    if (contarArray == 8)
                                     {
-                                        concatThreeText = "a3";
+                                       concardenarTercerText= "a3";
                                     }
                                 }
                                 
                             }
-                            Console.WriteLine(input + " " + "=>" + " " + concatOneText+ concatTwoText+ concatThreeText);
-                            countArray = 0;
+                            Console.WriteLine(input + " " + "=>" + " " + concardenarPrimerText+ concardenarSegundoText+ concardenarTercerText );
+                            contarArray = 0;
                         }
                         if (input.Equals("XXXoooxxxOOO")){
                             foreach (char c in input)
@@ -98,66 +102,65 @@ namespace CompressString
 
                                 if (c == 'X')
                                 {
-                                    countArray++;
-                                    if (countArray == 3)
+                                    contaeArray++;
+                                    if (contarArray == 3)
                                     {
-                                        concatOneText = "X3";
+                                        concandernarPrimerText = "X3";
                                     }
                                 }
                                
 
                             }
-                            countArray = 0;
+                            contarArray = 0;
                             foreach (char c in input)
                             {
 
                                 if (c == 'o')
                                 {
-                                    countArray++;
-                                    if (countArray == 3)
+                                    contarArray++;
+                                    if (contarArray == 3)
                                     {
-                                        concatTwoText = "o3";
+                                        concardenarSegundoText = "o3";
                                     }
                                 }
 
 
                             }
-                            countArray = 0;
+                            contarArray = 0;
                             foreach (char c in input)
                             {
 
                                 if (c == 'x')
                                 {
-                                    countArray++;
-                                    if (countArray == 3)
+                                    contarArray++;
+                                    if (contarArray == 3)
                                     {
-                                        concatThreeText = "x3";
+                                        concardenarTercerText = "x3";
                                     }
                                 }
 
 
                             }
-                            countArray = 0;
+                            contarArray = 0;
                             foreach (char c in input)
                             {
 
                                 if (c == 'O')
                                 {
-                                    countArray++;
-                                    if (countArray == 3)
+                                    contarArray++;
+                                    if (contarArray == 3)
                                     {
-                                        concatFour = "O3";
+                                        concardenarCuartoText = "O3";
                                     }
                                 }
 
 
                             }
-                            Console.WriteLine(input + " " + "=>" + " " + concatOneText + concatTwoText + concatThreeText + concatFour);
+                            Console.WriteLine(input + " " + "=>" + " " + concardenarPrimerText + concardenarSegundoText + concardenarTercerText + concardenarCuartoText );
                         }
                     
                     }
                    
-
                 }
             }
             catch(Exception)

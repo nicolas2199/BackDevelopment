@@ -1,14 +1,17 @@
 ﻿namespace Solid.Principles
 {
   using System;
-  using System.Globalization;
+    using System.Collections.Generic;
+    using System.Globalization;
   using Dto;
 
   internal class Program
   {
     private static readonly ApplicationData applicationData = new ApplicationData();
 
-    private static void Main(string[] args)
+    private static readonly ReportGenerator reportGenerator = new ReportGenerator();
+
+        private static void Main(string[] args)
     {
       try
       {
@@ -144,9 +147,9 @@
 
       Console.Write("Report File Name : ");
 
-      var reportFileName = Console.ReadLine();
-
-      applicationData.GenerateReport(reportFileName);
+      string reportFileName = Console.ReadLine();
+      List<EmployeeDto> listEmployee = applicationData.GetEmployees();
+      reportGenerator.generateReport(reportFileName, listEmployee);
 
       Console.WriteLine("the report was generated.");
     }

@@ -14,7 +14,7 @@ namespace CompressString
             // XXXoooxxxOOO => X3o3x3O3
             Compress("abbcca");
             // abbcca => abbcca
-            Compress("aabbcc");
+            //Compress("aabbcc");
             // aabbcc => aabbcc
             Compress("");
             // Error: the string must not be null or empty

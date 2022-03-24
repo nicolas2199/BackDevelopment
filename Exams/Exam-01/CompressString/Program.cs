@@ -122,6 +122,8 @@ namespace CompressString
                     return false;
                 }
             }
+
+            return true;
         }
 
     }

@@ -9,7 +9,7 @@ namespace ParcialPrimerCorte
         
         //Console.WriteLine(Compress(""));
         // Error: the string must not be null or empty
-        Console.WriteLine("aabcccccaaa => "+Compress("aabcccccaaa"));
+        Console.WriteLine(Compress("aabcccccaaa"));
         // aabcccccaaa => a2b1c5a31
         Console.WriteLine(Compress("XXXoooxxxOOO"));
         // XXXoooxxxOOO => X3o3x3O3

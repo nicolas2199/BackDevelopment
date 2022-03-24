@@ -15,25 +15,34 @@ namespace PrintMultiples{
     class Program{
 
         static void Main(string[] args) {
-
+            
+        //Variables para separar por comas
            String resultadoMultiplos= ""; 
 
-            for (int numero=1;numero<=100;numero++){
+            for (int numero = 1; numero <= 100; numero++)//recorre los numeros hasta 100
+            {
                
 
-                if(numero%3==0){
+                if(numero % 3 == 0)//multiplos de tres
+                {
                      resultadoMultiplos = " M-3, ";
                 }
-                if(numero%5==0){
+
+                if(numero % 5 == 0)// multiplos de cinto
+                {
                       
                     resultadoMultiplos = resultadoMultiplos + ", M-5 ";
                 }
-                if(numero%3==0 && numero%5 == 0){
-                
-                    
+
+                if(numero % 3 == 0 && numero % 5 == 0)// multiplos de tres y cinco
+                {
+            
                     resultadoMultiplos = resultadoMultiplos + ", M-3-5 ";
                 }
-                 
+                else{
+
+                    resultadoMultiplos = resultadoMultiplos + " " + numero;
+                }
 
                
         }

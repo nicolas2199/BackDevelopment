@@ -7,6 +7,7 @@
   internal class Program
   {
     private static readonly ApplicationData applicationData = new ApplicationData();
+    private static readonly ReportGenerator reportGenerator = new ReportGenerator();
 
     private static void Main(string[] args)
     {
@@ -146,7 +147,7 @@
 
       var reportFileName = Console.ReadLine();
 
-      applicationData.GenerateReport(reportFileName);
+      ReportGenerator.Generate(reportFileName);
 
       Console.WriteLine("the report was generated.");
     }

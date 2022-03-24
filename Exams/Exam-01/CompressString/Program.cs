@@ -8,14 +8,13 @@
 /// - La cadena solo debe permitir caracteres alfabeticos ([A-Z,a-z])
 /// - Los caracteres se diferencian por mayusculas o minusculas (Case Sensitive)
 /// </summary>
-
+//
 using System;
-using System.Text;
 namespace CompressString
 {
     public class Program
     {
-
+        // DAVID ANDUQUIA
         static int MAXIMO_CARACTERES = 255;
         public static void Main()
         {

@@ -88,21 +88,21 @@
     /// <summary>
     /// Method to generate report
     /// </summary>
-    public void GenerateReport(string reportFilename)
-    {
-      var fullReportFileName = $"{Constants.ReportsPath}{reportFilename}";
-      var sw = new StreamWriter(fullReportFileName);
+    // public void GenerateReport(string reportFilename)
+    // {
+    //   var fullReportFileName = $"{Constants.ReportsPath}{reportFilename}";
+    //   var sw = new StreamWriter(fullReportFileName);
 
-      var employees = GetEmployees();
+    //   var employees = GetEmployees();
 
-      foreach (var emp in employees)
-      {
-        sw.WriteLine($"{emp.Id},{emp.FirstName},{emp.LastName},{emp.HireDate},{emp.Email},{emp.Phone}");
-      }
+    //   foreach (var emp in employees)
+    //   {
+    //     sw.WriteLine($"{emp.Id},{emp.FirstName},{emp.LastName},{emp.HireDate},{emp.Email},{emp.Phone}");
+    //   }
 
-      sw.Flush();
-      sw.Close();
-    }
+    //   sw.Flush();
+    //   sw.Close();
+    // }
 
     /// <summary>
     /// Build the Connection String to the database
@@ -116,6 +116,25 @@
       };
 
       return sqlConnectionStringBuilder.ToString();
+    }
+  }
+  public class ReportGenerator
+  {
+    /// <summary>
+    /// Method to generate report
+    /// </summary>
+    public static void Generate(string reportFilename, List<EmployeeDto> employees)
+    {
+      var fullReportFileName = $"{Constants.ReportsPath}{reportFilename}";
+      var sw = new StreamWriter(fullReportFileName);
+
+      foreach (var emp in employees)
+      {
+        sw.WriteLine($"{emp.Id},{emp.FirstName},{emp.LastName},{emp.HireDate},{emp.Email},{emp.Phone}");
+      }
+
+      sw.Flush();
+      sw.Close();
     }
   }
 }

@@ -7,6 +7,7 @@
   internal class Program
   {
     private static readonly ApplicationData applicationData = new ApplicationData();
+    private static readonly ApplicationData ReportGenerator = new ApplicationData();
 
     private static void Main(string[] args)
     {

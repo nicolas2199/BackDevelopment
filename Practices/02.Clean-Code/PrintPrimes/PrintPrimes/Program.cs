@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Juan Felipe Osorio 64740
+
+using System;
 
 namespace PrintPrimes
 {
@@ -37,7 +39,7 @@ namespace PrintPrimes
                }
             }
          if (numberCounter <= 2){ 
-           Console.WriteLine(i + ", ");
+           Console.Write(i + ", ");
           }
          numberCounter = 0;
          }

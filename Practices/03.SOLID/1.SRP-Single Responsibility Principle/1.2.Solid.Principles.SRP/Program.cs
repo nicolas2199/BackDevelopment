@@ -146,7 +146,7 @@
 
       var reportFileName = Console.ReadLine();
 
-      applicationData.GenerateReport(reportFileName);
+      ReportGenerator.Generate(reportFileName);
 
       Console.WriteLine("the report was generated.");
     }

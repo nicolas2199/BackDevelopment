@@ -135,35 +135,40 @@
 
       return employeeDto;
     }
+ private static void GenerateReport()
+{
+  Console.Clear();
+  Console.WriteLine("Generate Report");
+  Console.WriteLine("---------------");
+  Console.WriteLine();
 
-    private static void GenerateReport()
-    {
-      Console.Clear();
-      Console.WriteLine("Generate Report");
-      Console.WriteLine("---------------");
-      Console.WriteLine();
+  Console.Write("Report File Name         : ");
+  var reportFileName = Console.ReadLine();
+  Console.Write("Report Type (1-CSV 2-XML): ");
+  var reportTypeOption = ' ';
+  while (reportTypeOption != (char)ReportType.CSV && reportTypeOption != (char)ReportType.XML)
+  {
+    reportTypeOption = Console.ReadKey().KeyChar;
+  }
 
-      Console.Write("Report File Name         : ");
-      var reportFileName = Console.ReadLine();
-      Console.Write("Report Type (1-CSV 2-XML): ");
-      char reportTypeOption = ' ';
-      while ((reportTypeOption != (char)ReportType.CSV) && (reportTypeOption != (char)ReportType.XML))
-      {
-        reportTypeOption = Console.ReadKey().KeyChar;
-      }
-      Console.WriteLine();
+  Console.WriteLine();
 
-      var employees = applicationData.GetEmployees();
+  var employees = applicationData.GetEmployees();
 
-      var reportType = ReportType.CSV;
-      if(reportTypeOption == (char) ReportType.XML)
-      {
-        reportType = ReportType.XML;
-      }
+  IReportGenerator reportGenerator = null;
+  switch ((ReportType)reportTypeOption)
+  {
+    case ReportType.CSV:
+      reportGenerator = new ReportCSV();
+      break;
+    case ReportType.XML:
+      reportGenerator = new ReportXML();
+      break;
+  };
 
-      ReportGenerator.Generate(reportFileName, employees, reportType);
+  reportGenerator.Generate(reportFileName, employees);
 
-      Console.WriteLine("the report was generated.");
-    }
+  Console.WriteLine("the report was generated.");
+  }
   }
 }

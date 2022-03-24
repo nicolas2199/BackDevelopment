@@ -9,6 +9,41 @@
   using Dto;
   using SOLID.Common.SQLData;
 
+  public interface IReportGenerator
+  {
+  void Generate(string reportFilename, List<EmployeeDto> employees);
+  }
+
+  public class ReportCSV : IReportGenerator
+  {
+    public void Generate(string reportFilename, List<EmployeeDto> employees)
+    {
+      var fullReportFileName = $"{Constants.ReportsPath}{reportFilename}.csv";
+      var sw = new StreamWriter(fullReportFileName);
+
+      foreach (var emp in employees)
+      {
+        sw.WriteLine($"{emp.Id},{emp.FirstName},{emp.LastName},{emp.HireDate},{emp.Email},{emp.Phone}");
+      }
+
+      sw.Flush();
+      sw.Close();
+    }
+  }
+
+  public class ReportXML : IReportGenerator
+  {
+    public void Generate(string reportFilename, List<EmployeeDto> employees)
+    {
+      var fullReportFileName = $"{Constants.ReportsPath}{reportFilename}.xml";
+      var sw = new StreamWriter(fullReportFileName);
+      XmlSerializer xml = new XmlSerializer(typeof(List<EmployeeDto>));
+      xml.Serialize(sw, employees);
+      sw.Flush();
+      sw.Close();
+    }
+  }
+
   public class ApplicationData
   {
     private readonly SqlDatabase sqlDatabase;

@@ -17,11 +17,11 @@ namespace PrintPrimes
 
         }
 
-        private static void PrintPrimes(int number)
+        private static void PrintPrimes(int maximoNumeroParaRecorrer)
         {
-            for (int i = 0; i <= number; i++)
+            for (int numeroParaValidar = 0; numeroParaValidar <= maximoNumeroParaRecorrer; numeroParaValidar++)
             {
-                if (number >= 0 && number <= 1)
+                if (maximoNumeroParaRecorrer >= 0 && maximoNumeroParaRecorrer <= 1)
                 {
                     Console.Write("Numero invalido");
 
@@ -29,10 +29,10 @@ namespace PrintPrimes
                 else
                 {
 
-                    if (i % 2 != 0)
+                    if (numeroParaValidar % 2 != 0)
                     {
                         //Console.Write("No es primo");
-                        Console.Write(i + "   ");
+                        Console.Write(numeroParaValidar + "   ");
                     }
                 }
             }

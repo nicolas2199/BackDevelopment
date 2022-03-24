@@ -22,7 +22,7 @@ dotnet run .\PrintPrimes.csproj
 ```
 # Notas
 ## PrintPrimes (0.0)
-- No tiene Errores Ni Warnings (0.5)      = 
+- No tiene Errores Ni Warnings (0.5)      = 0.5
 - No tiene Codigo Innecesario  (0.5)      = 
 - Funciona y Cumple con el Objetivo (1.5) = 
 - El codigo Es Entendible (1.0)           = 

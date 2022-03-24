@@ -51,10 +51,10 @@ RECUERDE SUBIR SU SOLUCIÓN A SU RAMA DE ESTE REPOSITORIO.
 
 # Notas (0.0)
 - No tiene Errores Ni Warnings (0.5)      = 0.5
-- No tiene Codigo Innecesario  (0.5)      = 0.0 => para que usas el Try/Catch?
+- No tiene Codigo Innecesario  (0.5)      = 0.5 => para que usas el Try/Catch?
 - Funciona y Cumple con el Objetivo (1.5) = 0.0 => No Funciona para Entradas Diferentes
 - El codigo Es Entendible (1.0)           = 0.0 => El codigo es fijo para las entradas dadas, no sirve para nuevas entradas
-- Cumple con el Codigo Limpio (1.5)       = 0.7
+- Cumple con el Codigo Limpio (1.5)       = 1.0
   Los Nombres de las variables y Funciones: (0.1/ cada una)
   - Revelan la intencion, es decir se sabe que hacen o que almacenan? = X => la regEx VAL puede ser cualquier cosa, Validate, Value?
   - Los Nombres son claros o son confusos?                            = X => InputSplit que contendra?

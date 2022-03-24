@@ -1,5 +1,4 @@
-
-/// <summary>
+﻿/// <summary>
 /// Implemente un método para realizar la compresión básica de cadenas utilizando el recuento de caracteres repetidos.
 /// Criterios de Aceptación:
 /// - la cadena aabcccccaaa se convertiría en a2b1c5a3.

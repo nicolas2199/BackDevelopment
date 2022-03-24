@@ -1,15 +1,4 @@
-﻿/// <summary>
-/// Implemente un método para realizar la compresión básica de cadenas utilizando el recuento de caracteres repetidos.
-/// Criterios de Aceptación:
-/// - la cadena aabcccccaaa se convertiría en a2b1c5a3.
-/// - Si la longitud de la cadena "comprimida" es mayor la longitud de la cadena original, su método debería devolver la cadena original.
-/// - La cadena no puede ser nula o vacia
-/// - La longitud de la cadena debe ser menor o igual a 255 caracteres
-/// - La cadena solo debe permitir caracteres alfabeticos ([A-Z,a-z])
-/// - Los caracteres se diferencian por mayusculas o minusculas (Case Sensitive)
-/// </summary>
-
-using System;
+﻿using System;
 using System.Text;
 
 namespace CompressString

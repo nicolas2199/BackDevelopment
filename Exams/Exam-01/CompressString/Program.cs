@@ -1,4 +1,4 @@
-﻿
+﻿//Juan Felipe Osorio 64740
 using System;
 
 namespace CompressString

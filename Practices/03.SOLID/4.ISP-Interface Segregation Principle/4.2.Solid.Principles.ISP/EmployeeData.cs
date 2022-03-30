@@ -1,19 +1,18 @@
-﻿namespace Solid.Principles
+namespace Solid.Principles
 {
   using System;
   using System.Collections.Generic;
   using System.Data;
   using System.Data.SQLite;
-  using System.IO;
   using Define;
   using Dto;
   using SOLID.Common.SQLData;
 
-  public class ApplicationData
+  public class EmployeeData: IEmployeeData
   {
     private readonly SqlDatabase sqlDatabase;
 
-    public ApplicationData()
+    public EmployeeData()
     {
       sqlDatabase = new SqlDatabase(GetConnectionString());
     }
@@ -84,25 +83,6 @@
         sqlDatabase.CloseConnection();
       }
     }
-
-    /// <summary>
-    /// Method to generate report
-    /// </summary>
-    // public void GenerateReport(string reportFilename)
-    // {
-    //   var fullReportFileName = $"{Constants.ReportsPath}{reportFilename}";
-    //   var sw = new StreamWriter(fullReportFileName);
-
-    //   var employees = GetEmployees();
-
-    //   foreach (var emp in employees)
-    //   {
-    //     sw.WriteLine($"{emp.Id},{emp.FirstName},{emp.LastName},{emp.HireDate},{emp.Email},{emp.Phone}");
-    //   }
-
-    //   sw.Flush();
-    //   sw.Close();
-    // }
 
     /// <summary>
     /// Build the Connection String to the database

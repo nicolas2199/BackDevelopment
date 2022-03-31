@@ -34,26 +34,26 @@
   </EmployeeDto>
   <EmployeeDto>
     <Id>5</Id>
-    <FirstName>ciro</FirstName>
-    <LastName>mosquera</LastName>
-    <HireDate>1999-10-21T00:00:00</HireDate>
-    <Email>ciro@gmail.com</Email>
-    <Phone>3218868895</Phone>
+    <FirstName>juan</FirstName>
+    <LastName>castiblanco</LastName>
+    <HireDate>1998-09-28T00:00:00</HireDate>
+    <Email>pipejuan321@gmail.com</Email>
+    <Phone>3168165175</Phone>
   </EmployeeDto>
   <EmployeeDto>
     <Id>6</Id>
-    <FirstName>Leidy</FirstName>
-    <LastName>Villamil</LastName>
-    <HireDate>2000-01-22T00:00:00</HireDate>
-    <Email>yuyu@gmail.com</Email>
-    <Phone>3218868896</Phone>
+    <FirstName>juan</FirstName>
+    <LastName>patas</LastName>
+    <HireDate>1999-06-30T00:00:00</HireDate>
+    <Email>hmmpatas@gmail.com</Email>
+    <Phone>3189871234</Phone>
   </EmployeeDto>
   <EmployeeDto>
     <Id>7</Id>
-    <FirstName>Yurani</FirstName>
-    <LastName>Caicedo</LastName>
-    <HireDate>2000-01-22T00:00:00</HireDate>
-    <Email>miamorhermosa@gmail.com</Email>
-    <Phone>3218888888</Phone>
+    <FirstName>Pablo</FirstName>
+    <LastName>Bravo</LastName>
+    <HireDate>2005-04-21T00:00:00</HireDate>
+    <Email>jupacabr@gmail.com</Email>
+    <Phone>3178165137</Phone>
   </EmployeeDto>
 </ArrayOfEmployeeDto>

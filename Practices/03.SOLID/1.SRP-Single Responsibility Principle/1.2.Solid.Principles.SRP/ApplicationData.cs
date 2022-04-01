@@ -85,10 +85,12 @@
       }
     }
 
+
+    // ******se comento este codigo ********
     /// <summary>
     /// Method to generate report
     /// </summary>
-    public void GenerateReport(string reportFilename)
+    /* public void GenerateReport(string reportFilename)
     {
       var fullReportFileName = $"{Constants.ReportsPath}{reportFilename}";
       var sw = new StreamWriter(fullReportFileName);
@@ -102,7 +104,8 @@
 
       sw.Flush();
       sw.Close();
-    }
+    } */
+    // ************ fin de codigo comentado******************
 
     /// <summary>
     /// Build the Connection String to the database
